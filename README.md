@@ -10,18 +10,18 @@ As demonstrated in this application, we just need to add "RequestMappingControll
 Once complete and server is up and running we can use url's as descibed.
 
 ###### In order to view all the mapping's in spring context:
-<code>http://localhost/SpringRequestMappingDoc/sp/mappingInfo/allMappings
+<pre><code>http://localhost/SpringRequestMappingDoc/sp/mappingInfo/allMappings
 
-###### Response :
-[{"BeanName":"requestMappingController","DeclaringClass":"com.example.controller.RequestMappingController","MethodName":"getAllMappingInfo","AccessURL":["/mappingInfo/allMappings"]},{"BeanName":"requestMappingController","DeclaringClass":"com.example.controller.RequestMappingController","MethodName":"getSingleMappingInfo","AccessURL":["/mappingInfo/singleMapping"]},...
-</code>
+Response :
+[{"BeanName":"requestMappingController","DeclaringClass":"com.example.controller.RequestMappingController","MethodName":"getAllMappingInfo","AccessURL":["/mappingInfo/allMappings"]},{"BeanName":"requestMappingController","DeclaringClass":"com.example.controller.RequestMappingController","MethodName":"getSingleMappingInfo","AccessURL":["/mappingInfo/singleMapping"]},...</code></pre>
 
 ###### In order to view handler for single url:
-<code>http://localhost//SpringRequestMappingDoc/sp/mappingInfo/singleMapping?**path=/samplemethodone**
+<pre><code>http://localhost//SpringRequestMappingDoc/sp/mappingInfo/singleMapping?**path=/samplemethodone**
 
-###### Response : 
-[{"BeanName":"sample","DeclaringClass":"com.example.controller.SampleController","MethodName":"sampleMethod1","AccessURL":["/samplemethodone"]}]
-</code>
+Response:
+[{"BeanName":"sample","DeclaringClass":"com.example.controller.SampleController","MethodName":"sampleMethod1","AccessURL":["/samplemethodone"]}]</code></pre>
+
+
 ##### How it works :
 
 When Spring MVC is configured using <mvc:annotation-driven/> in an xml bean definition file, internally a component called RequestMappingHandlerMapping gets registered with Spring MVC. This component or in general a HandlerMapping component is responsible for routing request URI's to handlers which are the controller methods annotated with @RequestMapping annotation. We use this component in order to provide either all the mappings or single mapping based on the url provided by the user.
